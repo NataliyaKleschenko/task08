@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Util {
     static final char[] VOWELS_IN_ENGLISH = {'a', 'o', 'i', 'u', 'e'};
-    static final char[] CONSONANTS_IN_ENGLISH = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 's', 't', 'v', 'x', 'x', 'y'};
+    static final char[] CONSONANTS_IN_ENGLISH = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 's', 'r', 't', 'v', 'x', 'w', 'y'};
 
     public static int countVowels(String str) {
         char[] arrayOfChars = getArrayOfChars(str);
@@ -35,19 +35,19 @@ public class Util {
     }
 
     private static ArrayList<Pair> getNumberOfVowelsAndConsonants(String str) {
-        ArrayList<Pair> pairOfConsonantAndVowels = new ArrayList<>();
+        ArrayList<Pair> pairOfConsonantsAndVowels = new ArrayList<>();
         int consonants;
         int vowels;
         String[] arrayOfString = str.split("[.!?]+");
         for (String s : arrayOfString) {
             consonants = countConsonants(s);
             vowels = countVowels(s);
-            pairOfConsonantAndVowels.add(new Pair(consonants, vowels));
+            pairOfConsonantsAndVowels.add(new Pair(consonants, vowels));
         }
-        return pairOfConsonantAndVowels;
+        return pairOfConsonantsAndVowels;
     }
 
-    public static void check(String str) {
+    public static void checkNumberOfConsonantsAndVowelsInText(String str) {
         int count = 0;
         final ArrayList<Pair> numberOfVowelsAndConsonants = getNumberOfVowelsAndConsonants(str);
         printData(str, numberOfVowelsAndConsonants);
